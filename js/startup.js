@@ -4,11 +4,11 @@
 
     var clickStart = function(){
         document.getElementById("startup-container").style.display = "none";
-        //app.views.instructions.render();
+        app.views.instructions.render();
     };
 
     var render = function(){
-        document.getElementById("startup-container").style = "display: block";
+        document.getElementById("startup-container").style.display = "block";
         document.getElementById("title-start").addEventListener('click', clickStart);
     };
 

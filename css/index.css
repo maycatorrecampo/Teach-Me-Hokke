@@ -14,6 +14,7 @@ body{
   
 }
 
+/*STARTUP SCREEN*/
 #startup-container {
   background-image: url('../images/background.gif');
   background-size: contain;
@@ -40,9 +41,10 @@ body{
   margin: 30% auto 0 auto;
 }
 
-@media (min-width: 850px) {
+@media (min-width: 1200px) {
   .title-center {
     margin: 20% auto 0 auto;
+    width: 30%;
   }
 }
 
@@ -52,3 +54,88 @@ body{
   font-size: 14px;
   margin: 0 auto;
 }
+/*END OF STARTUP SCREEN*/
+
+/*INSTRUCTION SCREEN*/
+
+#instruction-container {
+  display: none; /*initial state*/
+  background-image: url('../images/instr-bg.jpg');
+  background-repeat: repeat-x;
+  background-size: cover;
+  width: 99%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-family: "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif
+}
+
+.instr-header {
+  max-width: 100%;
+  background-color: #CBC5EA;
+  border: 5px #73628A solid;
+  border-radius: 10px;
+  color: #6E3A53;
+  font-size: 40px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px auto 0;
+  padding: 3%;
+}
+
+.instr-col-left{
+  float: left;
+  width: 55%;
+  background-color: #EAEAEA;
+  margin: 10px auto;
+  min-height: 700px;
+  border-radius: 10px;
+  border: 5px #73628A solid;
+}
+
+.instr-col-left p {
+  color: #73628A;
+  font-size: 36px;
+  text-indent: 5%;
+  margin: 5% 10px 0;
+}
+
+
+.instr-col-right {
+  float: right;
+  width: 40%;
+}
+
+.instr-chara {
+  background-image: url('../images/image-hokke.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #EAEAEA;
+  min-height: 610px;
+  padding: 0 6% 0;
+  margin: 10px auto 30px;
+  border: 5px #73628A solid;
+  border-radius: 10px;
+
+}
+
+#instr-next {
+  background-color: #6E3A53;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 10px;
+  padding: 5%;
+  border-radius: 10px;
+  color: #F8F1FF;
+}
+
+#instr-next:hover {
+  color: #6E3A53;
+  background-color: #F8F1FF;
+  cursor: pointer;
+  border: 2px #6E3A53 solid;
+}
+
+/*END OF INSTRUCTION SCREEN*/
