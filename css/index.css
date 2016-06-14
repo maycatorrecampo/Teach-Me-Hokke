@@ -1,0 +1,54 @@
+@keyframes animatedBackground {
+	from { background-position: 0 -1000px; }
+	to { background-position: 5000px 1000px; }
+}
+
+body{
+}
+
+#main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+#startup-container {
+  background-image: url('../images/background.gif');
+  background-size: contain;
+  background-repeat: repeat;
+  animation: animatedBackground 20s linear infinite;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+#title-area {
+  display:block;
+  width: 100%;
+  text-align: center;
+}
+
+.title-center {
+  background-image: url('../images/logo-start.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  padding: 20% 20% 5%;
+  margin: 30% auto 0 auto;
+}
+
+@media (min-width: 850px) {
+  .title-center {
+    margin: 20% auto 0 auto;
+  }
+}
+
+#title-start {
+  border-radius: 3px;
+  text-align: center;
+  font-size: 14px;
+  margin: 0 auto;
+}
