@@ -5,7 +5,7 @@
 
     var startQuiz = function() {
         document.getElementById('instruction-container').style.display = "none";
-        //app.views.quiz.render();
+        app.views.quiz.render();
     };
 
     var render = function() {
