@@ -2,7 +2,7 @@
     app.controllers = app.controllers || {};
     
     var constants = app.data.constants;
-    var questions = app.data.questions;
+    var questions = app.data.questions.slice(0);
     var answers = app.data.answers;
     var images = app.data.images;
     var results = app.controllers.scores;
@@ -24,11 +24,19 @@
         return objarray.id === currentQuestion.answerId;
     };
   
-    var getTotalAnswered = function(){
+    var getTotalAnswered = function() {
         return totalAnswered;
     };
+
+    var getScore = function() {
+        return totalScore;
+    };
+
+    var incrementAnswered = function() {
+        totalAnswered++;
+    };
     
-    var getPercentage = function(){
+    var getPercentage = function() {
         return Math.floor((totalScore / constants.TOTAL_QUESTIONS) * 100);
     };
     
@@ -55,7 +63,6 @@
     var getChoices = function() {
         var ansArray = [];
         var answersCopy = answers.slice(0);
-        alert(answersCopy.length);
         for(var i = 0; i < constants.TOTAL_CHOICES; i++){
             var index = pickRandomIndex(answersCopy);
             ansArray.push(answersCopy.splice(pickRandomIndex(answersCopy), 1)[0]);
@@ -74,12 +81,15 @@
         return "url('" + images[currentQuestion.imageId].url + "')";
     };
     
-    var checkCorrectAnswer = function(id){
+    var checkCorrectAnswer = function(id) {
        if (isCorrect({"id" : id}, currentQuestion.answerId)){
-          totalScore++;
-          alert(totalScore);
+          totalScore++;;
+          app.views.quiz.showAnswer(true, id);
        }
-       totalAnswered++;
+       else {
+         app.views.quiz.showAnswer(true, currentQuestion.answerId);
+         app.views.quiz.showAnswer(false, id);
+       }
     };
     
     app.controllers.quiz = {
@@ -87,6 +97,9 @@
         getChoices: getChoices,
         getCharacter: getCharacter,
         checkCorrectAnswer: checkCorrectAnswer,
-        getTotalAnswered: getTotalAnswered
+        getTotalAnswered: getTotalAnswered,
+        incrementAnswered: incrementAnswered,
+        getScore: getScore,
+        getPercentage: getPercentage
     };
 })(window.app = window.app || {});

@@ -4,6 +4,17 @@
 	to { background-position: 5000px 1000px; }
 }
 
+@keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 /**MAIN CONTAINERS**/
 
 body{
@@ -24,7 +35,7 @@ body{
   background-image: url('../images/background.gif');
   background-size: contain;
   background-repeat: repeat;
-  animation: animatedBackground 20s linear infinite;
+  -webkit-animation: animatedBackground 20s linear infinite;
   width: 100%;
   position: absolute;
   top: 0;
@@ -216,3 +227,87 @@ body{
 }
 
 /*END OF QUIZ SCREEN */
+
+/*RESULTS SCREEN*/
+#results-container {
+  display: none;
+  background-image: url('../images/background.gif');
+  background-size: contain;
+  background-repeat: repeat;
+  animation: animatedBackground 20s linear infinite;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+#scorecard {
+  max-width:100%;
+  margin: 10px auto 0;
+}
+
+#score-percentage {
+  font-size: 48px;
+  font-weight: bolder;
+  padding: 10%;
+  border-radius: 20px;
+  -webkit-animation: pulsate 5s ease-out;
+  margin: 100px auto 0;
+  max-width: 40%;
+  color: #5F5AA2;
+}
+
+#score {
+  padding: 5%;
+  font-size: 24px;
+  margin: 0 auto;
+  color: #26547C;
+}
+
+/*END OF RESULTS SCREEN*/
+
+/*EVENT SCREEN*/
+
+#event-container {
+  display: none;
+  background-image: url('../images/background.gif');
+  background-size: contain;
+  background-repeat: repeat;
+  -webkit-animation: animatedBackground 20s linear infinite;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+#chara-pic {
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+#dialogue-window {
+  opacity: 0.5;
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  margin: 590px auto 10%;
+  background-color: #26547C;
+}
+
+#dialogue {
+  font-size: 36px;
+  z-index: 5;
+  margin: 0 auto;
+  color: #EDF0DA;
+}
+
+#next-frame {
+  z-index: 10;
+}
+
+/*END OF EVENT SCREEN*/

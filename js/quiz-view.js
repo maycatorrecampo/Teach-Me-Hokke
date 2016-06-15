@@ -5,8 +5,8 @@
     var quizControl = app.controllers.quiz;
   
     var finishQuiz = function() {
-        alert("Quiz Finished");
-        //app.views.results.render()
+        document.getElementById('quiz-container').style.display = "none";
+        app.views.results.render();
     };
 
     var loadQuestions = function() {
@@ -25,20 +25,34 @@
             c.innerHTML += "<p class='choice' id='" + choices[i].id + "' onClick= 'app.views.quiz.checkAnswer(this.id)'>" + choices[i].text + "</p>";
         }
     };
+
+    var showAnswer = function(isCorrect, id) {
+        choice = document.getElementById(id)
+        isCorrect ? choice.style.backgroundColor = "#7FB069" : choice.style.backgroundColor = "#A31621";
+    }
   
     var checkAnswer = function(id) {
         quizControl.checkCorrectAnswer(id);
         var next = document.getElementById("quiz-next")
         next.style.display = "block";
-        
-        next.addEventListener('click', 
-        (constants.TOTAL_QUESTIONS >= quizControl.getTotalAnswered()) ?
-          function() {
+
+        //remove click event
+        var choices = document.getElementsByTagName("p");
+        for(var i = 0; i < choices.length; i++){
+            choices[i].removeAttribute('onClick');
+        }
+
+        //add listener for next button
+        next.addEventListener('click', function() {
             //clear choices
             document.getElementById('quiz-choices').innerHTML = "";
-            loadQuestions();
-          }
-        : finishQuiz());
+            if(constants.TOTAL_QUESTIONS > quizControl.getTotalAnswered()){
+                quizControl.incrementAnswered(); 
+                loadQuestions();
+            }
+            else
+                finishQuiz();
+        });
     };
 
     var render = function(){
@@ -49,7 +63,8 @@
     
     app.views.quiz = {
         render: render,
-        checkAnswer: checkAnswer
+        checkAnswer: checkAnswer,
+        showAnswer: showAnswer
     };
     
 })(window.app = window.app || {});

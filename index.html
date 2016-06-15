@@ -37,9 +37,21 @@
   </div>
   
   <div id="results-container">
+    <div id="scorecard">
+      <div id="score-percentage">
+      </div>
+      <div id="score"></div>
+    </div>
+    <div id="view-event-button"></div>
+    <div id="return-title"></div>
   </div>
   
   <div id="event-container">
+    <div id="chara-pic"></div>
+    <div id="dialogue-window">
+      <p id="dialogue"></p>
+      <div id="next-frame"> >>>next>>> </div>
+    </div>
   </div>
 </div>
 
@@ -48,9 +60,12 @@
 <script charset="utf-8" src="js/instructions.js"></script>
 <script charset="utf-8" src="js/quiz-controller.js"></script>
 <script charset="utf-8" src="js/quiz-view.js"></script>
+<script charset="utf-8" src="js/results-view.js"></script>
 
   
-<script type="text/javascript"> app.views.startup.render() </script>
+<script type="text/javascript"> 
+  app.views.startup.render() 
+</script>
 </body>
 
 
