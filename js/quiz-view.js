@@ -8,13 +8,19 @@
         document.getElementById('quiz-container').style.display = "none";
         app.views.results.render();
     };
+  
+    var quizCallback = function() {
+            //clear choices
+            document.getElementById('quiz-choices').innerHTML = "";
+            (constants.TOTAL_QUESTIONS > quizControl.getTotalAnswered()) ? loadQuestions() : finishQuiz();
+    };
 
     var loadQuestions = function() {
         document.getElementById("quiz-next").style.display = "none";
         
         //render question//
         document.getElementById('quiz-question').innerHTML = quizControl.getQuestion().text;
-        
+
         //render character//
         document.getElementById('quiz-chara').style.backgroundImage = quizControl.getCharacter();
       
@@ -23,7 +29,8 @@
         var c = document.getElementById('quiz-choices')
         for(var i = 0; i < constants.TOTAL_CHOICES; i++){
             c.innerHTML += "<p class='choice' id='" + choices[i].id + "' onClick= 'app.views.quiz.checkAnswer(this.id)'>" + choices[i].text + "</p>";
-        }
+        };
+        
     };
 
     var showAnswer = function(isCorrect, id) {
@@ -35,24 +42,15 @@
         quizControl.checkCorrectAnswer(id);
         var next = document.getElementById("quiz-next")
         next.style.display = "block";
-
+      
+        //add listener for next button
+        next.addEventListener('click', quizCallback, false);
+      
         //remove click event
         var choices = document.getElementsByTagName("p");
         for(var i = 0; i < choices.length; i++){
             choices[i].removeAttribute('onClick');
         }
-
-        //add listener for next button
-        next.addEventListener('click', function() {
-            //clear choices
-            document.getElementById('quiz-choices').innerHTML = "";
-            if(constants.TOTAL_QUESTIONS > quizControl.getTotalAnswered()){
-                quizControl.incrementAnswered(); 
-                loadQuestions();
-            }
-            else
-                finishQuiz();
-        });
     };
 
     var render = function(){

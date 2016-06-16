@@ -2,7 +2,7 @@
     app.controllers = app.controllers || {};
     
     var constants = app.data.constants;
-    var questions = app.data.questions.slice(0);
+    var questions = app.data.questions;
     var answers = app.data.answers;
     var images = app.data.images;
     var results = app.controllers.scores;
@@ -13,6 +13,7 @@
     
     var getQuestion = function() {
         currentQuestion = questions.splice(pickRandomIndex(questions), 1)[0];
+        totalAnswered++;
         return currentQuestion;
     };
     

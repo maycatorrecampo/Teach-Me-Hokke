@@ -265,6 +265,23 @@ body{
   color: #26547C;
 }
 
+#view-event-button, #return-title{
+  background-color: #AA4465;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 10px;
+  border-radius: 10px;
+  color: #EDF0DA;
+  padding: 10px;
+  margin: 25px auto 0;
+  max-width: 30%;
+  cursor: pointer;
+}
+
+#view-event-button{
+  display: none;
+}
+
 /*END OF RESULTS SCREEN*/
 
 /*EVENT SCREEN*/
@@ -285,29 +302,34 @@ body{
 #chara-pic {
   min-width: 100%;
   min-height: 100%;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   position: absolute;
 }
 
 #dialogue-window {
-  opacity: 0.5;
   width: 100%;
-  padding: 100px 0;
+  padding: 5% 0;
   position: relative;
-  margin: 590px auto 10%;
-  background-color: #26547C;
+  margin: 40% auto 10%;
+  opacity: 0.75;
 }
 
 #dialogue {
-  font-size: 36px;
+  font-size: 30px;
   z-index: 5;
   margin: 0 auto;
-  color: #EDF0DA;
+  color: #26547C;
+  opacity: 1;
+  width: 50%;
 }
 
 #next-frame {
   z-index: 10;
+  font-size: 24px;
+  color: #DD7596;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 /*END OF EVENT SCREEN*/
