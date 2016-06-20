@@ -83,11 +83,10 @@
     };
     
     var checkCorrectAnswer = function(id) {
-       if (isCorrect({"id" : id}, currentQuestion.answerId)){
+       if (isCorrect({"id" : id}, currentQuestion.answerId)) {
           totalScore++;;
           app.views.quiz.showAnswer(true, id);
-       }
-       else {
+       } else {
          app.views.quiz.showAnswer(true, currentQuestion.answerId);
          app.views.quiz.showAnswer(false, id);
        }
