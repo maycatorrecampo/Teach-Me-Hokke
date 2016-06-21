@@ -3,9 +3,9 @@
 app.data = app.data || {};
 
 //CONSTANTS
-var TOTAL_CHOICES = 4;
-var TOTAL_QUESTIONS = 5;
-    
+var TOTAL_CHOICES = 4,
+    TOTAL_QUESTIONS = 5;
+
 //DATA
 var questions = [
     {"id": "1", "answerId":"4", "imageId": "0", "text": "Mika was a real <span class=\"underline \"> avid <\/span> model train collector. He inherited the desire to collect because his dad had a collection, too."},
@@ -27,7 +27,7 @@ var answers = [
     {"id":"9", "text": "gift"},
     {"id": "10", "text": "embellish"},
     {"id": "11", "text": "dislikes"},
-    {"id":"12", "text": "gift"},
+    {"id":"12", "text": "gripe"},
     {"id": "13", "text": "remains"},
     {"id": "14", "text": "temporary"},
     {"id":"15", "text": "endless"},

@@ -21,8 +21,7 @@
               trigger.style.display = "block";
               trigger.addEventListener('click', loveEventTrigger);
             
-        }
-        else 
+        } else
             document.getElementById('return-title').addEventListener('click', returnToTitle);
     };
 
@@ -39,20 +38,19 @@
     };
 
     var imageGet = function() {
-        if(framectr < eventImage.length){
+        if(framectr < eventImage.length) {
             document.getElementById("chara-pic").style.backgroundImage = "url('" + eventImage[framectr].image + "')";
             document.getElementById("dialogue").innerHTML = eventImage[framectr].dialogue;
-            framectr++
-            if(framectr === eventImage.length - 1){
+            framectr++;
+
+            if(framectr === eventImage.length - 1) {
               document.getElementById("next-frame").innerHTML = "Go On A Date!";
               document.getElementById("dialogue-window").style.backgroundColor = "#F5F3BB";
-            }
-            else if(framectr === eventImage.length){
+            } else if(framectr === eventImage.length) {
               document.getElementById("next-frame").innerHTML = "Back To Title";
               document.getElementById("dialogue-window").style.backgroundColor = "#F5F3BB";
             };
-        }
-        else
+        } else
             returnToTitle();
     };
 
