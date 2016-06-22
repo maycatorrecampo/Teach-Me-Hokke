@@ -21,8 +21,9 @@
               trigger.style.display = "block";
               trigger.addEventListener('click', loveEventTrigger);
             
-        } else
-            document.getElementById('return-title').addEventListener('click', returnToTitle);
+        }
+
+        document.getElementById('return-title').addEventListener('click', returnToTitle);
     };
 
     var returnToTitle = function() {

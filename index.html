@@ -8,79 +8,98 @@
 </head>
 
 <body id="body">
-<div id="main-container">
-  <div id="startup-container">
-    <div id="title-area">
-      <div class="title-center"></div>
-      <button id="title-start" class="title-start">START!</button>
-    </div>
-  </div>
-  
-  <div id="instruction-container">
-    <div class="grid-container">
-      <div class="row">
-        <div class="col col-6">
-          <div class="instr-header">INSTRUCTIONS</div>
-        </div>
+  <div id="main-container">
+    <!-- STARTUP SCREEN -->
+    <div id="startup-container">
+      <div id="title-area">
+        <div class="title-center"></div>
+        <button id="title-start" class="title-start">START!</button>
       </div>
-      <div class="row">
-        <div class="col col-3">
-          <div class="instr-text">
-          <p>Hokuto-senpai, nicknamed fondly by his classmates as "Hokke", happens to like girls who are really good in English.</p>
-          <p>Ace the Context Clues quiz by providing the closest synonym to the underlined words in the given sentences and win Hokke-senpai's heart!</p>
+    </div>
+
+    <!-- INSTRUCTION SCREEN -->
+    <div id="instruction-container">
+      <div class="grid-container">
+        <div class="row">
+          <div class="col col-6">
+            <div class="instr-header">INSTRUCTIONS</div>
           </div>
-          <div id="instr-next">NEXT</div>
         </div>
-        <div class="col col-3">
-          <div class="instr-chara"></div>
+        <div class="row">
+          <div class="col col-3">
+            <div class="instr-text">
+            <p>Hokuto-senpai, nicknamed fondly by his classmates as "Hokke", happens to like girls who are really good in English.</p>
+            <p>Ace the Context Clues quiz by providing the closest synonym to the underlined words in the given sentences and win Hokke-senpai's heart!</p>
+            </div>
+            <div id="instr-next">NEXT</div>
+          </div>
+          <div class="col col-3">
+            <div class="instr-chara"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-container">
+      <div class="grid-container">
+        <div class="row">
+          <div class="col col-6">
+            <div id="quiz-question"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-3">
+            <div id="quiz-chara"></div>
+          </div>
+          <div class="col col-3">
+            <div id="quiz-choices"></div>
+            <div id="quiz-next">NEXT</div>
+          </div>
+        </div>
+      </div>
+      
+      <!--
+      <div id="quiz-chara"></div>
+      <div class ="quiz-qa-area">
+          <div id="quiz-question"></div>
+          <div id="quiz-choices"></div>
+          <div id="quiz-next">NEXT</div>
+      </div>
+      -->
+    </div>
+
+    <!-- RESULTS SCREEN -->
+    <div id="results-container">
+      <div id="scorecard">
+        <div id="score-percentage">
+        </div>
+        <div id="score"></div>
+      </div>
+      <div id="view-event-button">Go To Event!</div>
+      <div id="return-title">Return to Title</div>
+    </div>
+
+    <!-- EVENT SCREEN -->
+    <div id="event-container">
+      <div id="chara-pic">
+        <div id="dialogue-window">
+          <p id="dialogue"></p>
+          <div id="next-frame"> >>> NEXT >>></div>
         </div>
       </div>
     </div>
   </div>
-  
-  <div id="quiz-container">
-    <div id="quiz-chara"></div>
-    <div class ="quiz-qa-area">
-        <div id="quiz-question"></div>
-        <div id="quiz-choices"></div>
-        <div id="quiz-next">NEXT</div>
-    </div>
-  </div>
-  
-  <div id="results-container">
-    <div id="scorecard">
-      <div id="score-percentage">
-      </div>
-      <div id="score"></div>
-    </div>
-    <div id="view-event-button">Go To Event!</div>
-    <div id="return-title">Return to Title</div>
-  </div>
-  
-  <div id="event-container">
-    <div id="chara-pic">
-      <div id="dialogue-window">
-        <p id="dialogue"></p>
-        <div id="next-frame"> >>> NEXT >>></div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<script charset="utf-8" src="js/data.js"></script>
-<script charset="utf-8" src="js/startup.js"></script>
-<script charset="utf-8" src="js/instructions.js"></script>
-<script charset="utf-8" src="js/quiz-controller.js"></script>
-<script charset="utf-8" src="js/quiz-view.js"></script>
-<script charset="utf-8" src="js/results-view.js"></script>
+  <script charset="utf-8" src="js/data.js"></script>
+  <script charset="utf-8" src="js/startup.js"></script>
+  <script charset="utf-8" src="js/instructions.js"></script>
+  <script charset="utf-8" src="js/quiz-controller.js"></script>
+  <script charset="utf-8" src="js/quiz-view.js"></script>
+  <script charset="utf-8" src="js/results-view.js"></script>
 
-  
-<script type="text/javascript">
-  app.views.startup.render()
-</script>
+  <script type="text/javascript">
+    app.views.startup.render()
+  </script>
 </body>
-
-
-
-
 </html>
