@@ -1,0 +1,72 @@
+/**optimize/prettify later**/
+
+.grid-container {
+  padding:10px;
+}
+
+.row,
+.col {
+  box-sizing: border-box;
+}
+
+/* Clearfix */
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.col {
+  position: relative;
+  float: left;
+  display: block;
+  padding: 5px;
+}
+
+/**gutter**/
+.col + .col {
+  margin-left: 1.6%;
+}
+
+/**column sizes**/
+.col-1 {
+  width: 16.66%;
+}
+.col-2 {
+  width: 33.33%;
+}
+.col-3 {
+  width: 50%;
+}
+.col-4 {
+  width: 66.66%;
+}
+.col-5 {
+  width: 83.33%;
+}
+.col-6 {
+  width: 100%;
+  margin-left: 0;
+}
+
+/**for last column**/
+[class*='col-']:last-of-type {
+  margin-left: 0;
+}
+
+/**for mobile**/
+@media only screen and (max-width: 550px) {
+  .col-1,
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6 {
+    width: auto;
+    float: none;
+  }
+  .col + .col {
+    margin-left: 0;
+  }
+}

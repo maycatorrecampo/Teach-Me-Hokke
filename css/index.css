@@ -18,7 +18,7 @@
 /**MAIN CONTAINERS**/
 
 body{
-  font-family: "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif
+  font-family: "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif;
 }
 
 #main-container {
@@ -79,10 +79,10 @@ body{
   background-image: url('../images/instr-bg.jpg');
   background-repeat: repeat-x;
   background-size: cover;
-  width: 99%;
   position: absolute;
   top: 0;
   bottom: 0;
+  overflow: scroll
 }
 
 .instr-header {
@@ -93,33 +93,27 @@ body{
   color: #6E3A53;
   font-size: 40px;
   letter-spacing: 5px;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
-  margin: 10px auto 0;
+  margin: 10px auto 10px;
   padding: 3%;
 }
 
-.instr-col-left{
-  float: left;
-  width: 55%;
+
+.instr-text{
   background-color: #EAEAEA;
-  margin: 10px auto;
-  min-height: 700px;
+  height: 520px;
   border-radius: 10px;
   border: 5px #73628A solid;
+  overflow-y: auto;
+  margin-bottom: 20px;
 }
 
-.instr-col-left p {
+.instr-text p {
   color: #73628A;
-  font-size: 36px;
-  text-indent: 5%;
-  margin: 5% 10px 0;
-}
-
-
-.instr-col-right {
-  float: right;
-  width: 40%;
+  font-size: 34px;
+  text-align: justify;
+  margin: 5% 25px 0;
 }
 
 .instr-chara {
@@ -129,11 +123,8 @@ body{
   background-size: contain;
   background-color: #EAEAEA;
   min-height: 610px;
-  padding: 0 6% 0;
-  margin: 10px auto 30px;
   border: 5px #73628A solid;
   border-radius: 10px;
-
 }
 
 #instr-next {
@@ -141,7 +132,7 @@ body{
   text-align: center;
   font-weight: bold;
   letter-spacing: 10px;
-  padding: 5%;
+  padding: 25px;
   border-radius: 10px;
   color: #F8F1FF;
 }
