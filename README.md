@@ -12,4 +12,4 @@ TODO (if ever):
 
 - Unit Tests
 
-Screenshots are from [The Ensemble Stars Wiki](https://www.ensemble-stars.wikia.com/wiki/The_English_Ensemble_Stars_Wiki)
+Image Resources are from [The Ensemble Stars Wiki](https://www.ensemble-stars.wikia.com/wiki/The_English_Ensemble_Stars_Wiki)
