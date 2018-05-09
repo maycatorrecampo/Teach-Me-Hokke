@@ -53,6 +53,16 @@ var eventCg = [
     {"image": "images/cg4.png", "dialogue": ""}
 ];
 
+var original = {
+    idolName: /Hokuto/i,
+    nickname: /Hokke/i
+};
+
+var replacement = {
+    idolName: "Keito",
+    nickname: "Hasumin"
+};
+
 
 app.data.questions = questions;
 app.data.answers = answers;
@@ -62,5 +72,7 @@ app.data.constants = {
 };
 app.data.images = images;
 app.data.eventCg = eventCg;
+app.data.original = original;
+app.data.replacement = replacement;
 
 })(window.app = window.app || {});

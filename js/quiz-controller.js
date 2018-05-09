@@ -81,7 +81,7 @@
     };
 
     var checkCorrectAnswer = function(id) {
-       if (isCorrect({"id" : id}, currentQuestion.answerId)) {
+       if (isCorrect({"id" : id})) {
           totalScore++;;
           app.views.quiz.showAnswer(true, id);
        } else {
