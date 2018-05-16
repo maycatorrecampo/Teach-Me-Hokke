@@ -4,7 +4,7 @@ Last Updated: June 2016
 Objective: Play around with module exports + closures
 
 
-TODO (if ever):
+TODO (if ever I want to continue this):
 
 - Better Responsiveness (media queries)
 
